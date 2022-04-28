@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Output</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QTabWidget" name="tabWidget_output">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="tab_output_successful">
+          <attribute name="title">
+           <string>Successful</string>
+          </attribute>
+         </widget>
+         <widget class="QWidget" name="tab_output_failed">
+          <attribute name="title">
+           <string>Failed Task(s)</string>
+          </attribute>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>Input</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QTabWidget" name="tabWidget_input">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
+         <widget class="QWidget" name="tab_input_file">
+          <attribute name="title">
+           <string>From a File</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>File Select</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton">
+             <property name="text">
+              <string>Open task file (*.tsk)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit">
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>File Preview</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTextBrowser" name="textBrowser"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_input_IDLE">
+          <attribute name="title">
+           <string>IDLE</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QTextBrowser" name="textBrowser_2">
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Input Single Task Below</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_2"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_input_IDLE_multiple">
+          <attribute name="title">
+           <string>IDLE Multiple</string>
+          </attribute>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCommandLinkButton" name="commandLinkButton">
+         <property name="text">
+          <string>Run 0 Task(s) From A File/ IDLE Multiple</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuGTB">
+    <property name="title">
+     <string>&amp;GTB</string>
+    </property>
+    <widget class="QMenu" name="menu_Application">
+     <property name="title">
+      <string>&amp;Application</string>
+     </property>
+     <addaction name="action_Quit"/>
+    </widget>
+    <widget class="QMenu" name="menuCustomization">
+     <property name="title">
+      <string>Customization</string>
+     </property>
+     <widget class="QMenu" name="menuWindow_Style">
+      <property name="title">
+       <string>Window Style</string>
+      </property>
+      <addaction name="actionDefault_Light"/>
+      <addaction name="actionDark_Mode"/>
+     </widget>
+     <widget class="QMenu" name="menuFont">
+      <property name="title">
+       <string>Font</string>
+      </property>
+      <addaction name="actionSet_to_Default"/>
+      <addaction name="actionCustomize"/>
+     </widget>
+     <addaction name="menuFont"/>
+     <addaction name="menuWindow_Style"/>
+    </widget>
+    <widget class="QMenu" name="menuAbout">
+     <property name="title">
+      <string>About</string>
+     </property>
+     <addaction name="actionAbout_App"/>
+     <addaction name="actionGithub"/>
+    </widget>
+    <addaction name="menu_Application"/>
+    <addaction name="menuCustomization"/>
+    <addaction name="menuAbout"/>
+   </widget>
+   <addaction name="menuGTB"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_Quit">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+  </action>
+  <action name="actionDefault_Light">
+   <property name="text">
+    <string>Default (Light)</string>
+   </property>
+  </action>
+  <action name="actionDark_Mode">
+   <property name="text">
+    <string>Dark Mode (Beta)</string>
+   </property>
+  </action>
+  <action name="actionSet_to_Default">
+   <property name="text">
+    <string>Set to Default</string>
+   </property>
+  </action>
+  <action name="actionCustomize">
+   <property name="text">
+    <string>Customize</string>
+   </property>
+  </action>
+  <action name="actionAbout_App">
+   <property name="text">
+    <string>About App</string>
+   </property>
+  </action>
+  <action name="actionGithub">
+   <property name="text">
+    <string>Github</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
