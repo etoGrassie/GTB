@@ -4,15 +4,24 @@ from PyQt5 import QtWidgets
 from GTBWindow import Ui_GTBMainWindow
 
 
-class GTBApp(Ui_GTBMainWindow, QMainWindow):
+class GTBApp(QMainWindow, Ui_GTBMainWindow):
     signal_file_window = pyqtSignal()
     signal_file_window_return = pyqtSignal(str)
 
     def __init__(self):
         super(GTBApp, self).__init__()
-        self.pushButton_open_file.clicked.connect(lambda: self.file_window(r'C:\Users\Administrator\Desktop\task.tsk'))
+        self.setupUi(self)
+        self.add_actions()
+
+    def add_actions(self):
+        self.debug()
+        self.pushButton_open_file.clicked.connect(self.debug)
+
+    def debug(self):
+        print('self.debug active! ')
 
     def file_window(self, path):
+        print('DEBUG')
         file_index = []
         with open(path, 'r') as file:
             file_index.append(file.readlines())
