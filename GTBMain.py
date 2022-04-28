@@ -1,8 +1,12 @@
-from PyQt5.QtWidgets import QMainWindow
-from PyQt5.QtCore import pyqtSignal, QThread
 from PyQt5 import QtWidgets
-from GTBWindow import Ui_GTBMainWindow
+from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtWidgets import QMainWindow
 from qt_material import apply_stylesheet
+
+from GTBWindow import Ui_GTBMainWindow
+
+
+# import qdarkstyle
 
 class GTBApp(QMainWindow, Ui_GTBMainWindow):
     signal_file_window = pyqtSignal()
@@ -32,7 +36,8 @@ if __name__ == "__main__":
     import sys
 
     app = QtWidgets.QApplication(sys.argv)
-    apply_stylesheet(app, theme='dark_teal.xml')
+    # app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5()) # For Dark
+    apply_stylesheet(app, theme='dark_teal.xml')  # For Dark Teal
 
     ui = GTBApp()
     ui.show()
