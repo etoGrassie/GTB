@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="Icon">
+    <file>pycharm.ico</file>
+  </qresource>
+</RCC>
