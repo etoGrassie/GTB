@@ -3,6 +3,7 @@ from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QMainWindow
 from qt_material import apply_stylesheet
 
+from GTBTask import GTBProceed
 from GTBProgram import GTBThread
 from GTBWindow import Ui_GTBMainWindow
 
@@ -47,9 +48,11 @@ if __name__ == "__main__":
 
     ui = GTBApp()
     thread = GTBThread()
+    proceed = GTBProceed()
     ui.signal_file_window.connect(thread.file_window)
     thread.signal_file_window_return_text.connect(ui.set_preview)
     # thread.signal_file_window_return.connect()
+    thread.signal_start.connect()
 
     ui.show()
 

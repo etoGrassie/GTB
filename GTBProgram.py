@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import QFileDialog
 class GTBThread(QThread):
     signal_file_window_return_index = pyqtSignal(list)
     signal_file_window_return_text = pyqtSignal(str, str, int)
+    signal_start = pyqtSignal(str)
 
     def __init__(self):
         super(GTBThread, self).__init__()
@@ -29,3 +30,7 @@ class GTBThread(QThread):
         self.signal_file_window_return_index.emit(file_index)
         self.signal_file_window_return_text.emit(file_text, path, len(file_index))
         print(file_index)
+
+    def run(self, tasks):
+        self.signal_start.emit(tasks)
+
