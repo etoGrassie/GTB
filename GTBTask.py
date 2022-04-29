@@ -2,7 +2,6 @@ from random import choice
 
 
 class GTBProceed(object):
-    signal_work_done = pyqt
 
     def proceed_task(self, task_line=''):
         random_list = []
