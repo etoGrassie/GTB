@@ -6,8 +6,6 @@ from qt_material import apply_stylesheet
 from GTBWindow import Ui_GTBMainWindow
 
 
-# import qdarkstyle
-
 class GTBApp(QMainWindow, Ui_GTBMainWindow):
     signal_file_window = pyqtSignal()
     signal_file_window_return = pyqtSignal(list)
@@ -18,23 +16,13 @@ class GTBApp(QMainWindow, Ui_GTBMainWindow):
         self.add_actions()
 
     def add_actions(self):
-        self.pushButton_open_file.clicked.connect(lambda: self.file_window(r'C:\Users\Administrator\Desktop\task.tsk'))
+        self.pushButton_open_file.clicked.connect(self.file_window)
 
-    def debug(self):
+
+
+    @staticmethod
+    def debug():
         print('self.debug active! ')
-
-    def file_window(self, path):
-        file_index = []
-        file_text = ''
-        with open(path, 'r') as file:
-            for task in file.readlines():
-                file_text += task
-            file_index.extend(file.readlines())
-
-            for task in file:
-                file_index.append(file.readline())
-        self.textBrowser_file_preview.setPlainText(file_text)
-        self.signal_file_window_return.emit(file_index)
 
 
 if __name__ == "__main__":
@@ -42,7 +30,7 @@ if __name__ == "__main__":
 
     app = QtWidgets.QApplication(sys.argv)
     # app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5()) # For Dark
-    apply_stylesheet(app, theme='dark_teal.xml')  # For Dark Teal
+    apply_stylesheet(app, theme='dark_blue.xml')  # For Dark Blue Teal Default
 
     ui = GTBApp()
     ui.show()
