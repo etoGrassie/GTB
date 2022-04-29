@@ -52,7 +52,6 @@ if __name__ == "__main__":
     ui.signal_file_window.connect(thread.file_window)
     thread.signal_file_window_return_text.connect(ui.set_preview)
     # thread.signal_file_window_return.connect()
-    thread.signal_start.connect()
 
     ui.show()
 

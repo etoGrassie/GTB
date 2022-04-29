@@ -1,11 +1,11 @@
 from PyQt5.QtCore import pyqtSignal, QThread
 from PyQt5.QtWidgets import QFileDialog
+from GTBTask import GTBProceed
 
 
 class GTBThread(QThread):
     signal_file_window_return_index = pyqtSignal(list)
     signal_file_window_return_text = pyqtSignal(str, str, int)
-    signal_start = pyqtSignal(str)
 
     def __init__(self):
         super(GTBThread, self).__init__()
@@ -32,5 +32,7 @@ class GTBThread(QThread):
         print(file_index)
 
     def run(self, tasks):
-        self.signal_start.emit(tasks)
+        proceed = GTBProceed()
+        result = proceed.proceed_multiple_tasks(tasks)
+
 
