@@ -34,5 +34,3 @@ class GTBThread(QThread):
     def run(self, tasks):
         proceed = GTBProceed()
         result = proceed.proceed_multiple_tasks(tasks)
-
-
