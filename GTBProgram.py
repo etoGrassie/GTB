@@ -31,6 +31,12 @@ class GTBThread(QThread):
         self.signal_file_window_return_text.emit(file_text, path, len(file_index))
         print(file_index)
 
-    def run(self, tasks):
+    def run(self):
+        if self.mode == 0:
+            file_window = self.file_window()
+            if file_window is not None:
+                file_open = self.file_open(file_window)
+                pass
         proceed = GTBProceed()
         result = proceed.proceed_multiple_tasks(tasks)
+        return result
